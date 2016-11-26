@@ -1,0 +1,5 @@
+[user]
+    name = "Alexander Petrov"
+    email = "alldroll@gmail.com"
+[core]
+    editor = vim

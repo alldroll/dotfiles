@@ -1,24 +1,29 @@
 set nocompatible
 
 filetype off     " required!
-set rtp+=~/.vimi/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'git://github.com/gmarik/vundle.git'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
 
 " Interface
-    Bundle 'git://github.com/flazz/vim-colorschemes.git'
-    Bundle 'git://github.com/kien/ctrlp.vim.git'
-    Bundle 'git://github.com/scrooloose/nerdtree.git'
-    Bundle 'git://github.com/vim-scripts/UltiSnips.git'
-    Bundle 'git://github.com/ervandew/supertab.git'
-    Bundle 'git://github.com/scrooloose/nerdcommenter.git'
-    Bundle 'git://github.com/tpope/vim-fugitive.git'
-    Bundle 'git://github.com/scrooloose/syntastic.git'
-    Bundle 'git://github.com/fatih/vim-go.git'
+    Plugin 'git://github.com/flazz/vim-colorschemes.git'
+    Plugin 'git://github.com/kien/ctrlp.vim.git'
+    Plugin 'git://github.com/scrooloose/nerdtree.git'
+    Plugin 'git://github.com/vim-scripts/UltiSnips.git'
+    Plugin 'git://github.com/ervandew/supertab.git'
+    Plugin 'git://github.com/scrooloose/nerdcommenter.git'
+    Plugin 'git://github.com/tpope/vim-fugitive.git'
+    Plugin 'git://github.com/scrooloose/syntastic.git'
+    Plugin 'git://github.com/fatih/vim-go.git'
+
+call vundle#end()            " required
 
 filetype plugin indent on     " required!
 
 " Interface
+    set autochdir
+    set shell=/usr/bin/zsh\ -l
     set number
     set encoding=utf-8
     set fileencodings=utf-8,cp1251
@@ -134,9 +139,9 @@ filetype plugin indent on     " required!
 	syntax enable
     set background=dark
     try
-        colorscheme badwolf
+        colorscheme base
     catch /^Vim\%((\a\+)\)\=:E185/
-        echo "BadWolf theme not found. Run :BundleInstall"
+        echo "colorscheme is not found. Run :PluginInstall"
     endtry
 
     " NERDTree
